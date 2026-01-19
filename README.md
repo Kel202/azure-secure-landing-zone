@@ -14,3 +14,12 @@ implemented using Terraform under Azure Student subscription constraints.
 - Azure Student subscription
 - No Owner / IAM permissions
 - Focus on in-subscription security controls
+
+## Architecture
+
+The solution is based on a secure hub-and-spoke network architecture.
+
+![Architecture Diagram](architecture/architecture-diagram.png)
+
+Detailed design decisions are documented in
+[`architecture/architecture.md`](architecture/architecture.md).
