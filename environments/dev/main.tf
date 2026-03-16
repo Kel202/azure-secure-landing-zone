@@ -12,4 +12,7 @@ module "network" {
   location            = var.location
   environment         = var.environment
   resource_group_name = "rg-network-dev"
+
+    admin_username = var.admin_username
+  ssh_public_key = var.ssh_public_key
 }
