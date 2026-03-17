@@ -86,3 +86,27 @@ This allows analysis of:
 The following screenshot shows the deployed Azure resources in the network resource group.
 
 ![Resource Group](docs/screenshots/resource-group.png)
+
+## Network Architecture
+
+The environment uses a hub-and-spoke network model.
+
+![Hub Spoke](docs/screenshots/hub-spoke-topology.png)
+
+## Network Security Controls
+
+Network Security Groups enforce least-privilege traffic rules.
+
+![NSG Rules](docs/screenshots/nsg-rules.png)
+
+## Security Monitoring
+
+NSG events are collected in Log Analytics and analyzed using KQL queries.
+
+![NSG Logs](docs/screenshots/nsg-logs.png)
+
+## Infrastructure Deployment
+
+Infrastructure was deployed using Terraform.
+
+![Terraform Apply](docs/screenshots/terraform-apply.png)
