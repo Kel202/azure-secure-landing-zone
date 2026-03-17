@@ -80,3 +80,9 @@ This allows analysis of:
 - Allowed network traffic
 - Blocked connection attempts
 - Source and destination IP addresses
+
+## Deployed Infrastructure
+
+The following screenshot shows the deployed Azure resources in the network resource group.
+
+![Resource Group](docs/screenshots/resource-group.png)
