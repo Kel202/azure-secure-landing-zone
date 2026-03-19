@@ -1,0 +1,10 @@
+// Detect access attempts on non-standard ports
+// Flags anything outside SSH(22), HTTP(80), HTTPS(443), SQL(1433)
+AzureDiagnostics
+| where TimeGenerated > ago(24h)
+| where Category == "NetworkSecurityGroupEvent"
+| where direction_s == "In"
+| where conditions_destinationPortRange_s !in ("22", "80", "443", "1433", "0-65535")
+| summarize AttemptCount = count() by primaryIPv4Address_s, conditions_destinationPortRange_s
+| order by AttemptCount desc
+| project primaryIPv4Address_s, conditions_destinationPortRange_s, AttemptCount

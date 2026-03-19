@@ -1,0 +1,4 @@
+AzureDiagnostics
+| where Category == "NetworkSecurityGroupEvent"
+| sort by TimeGenerated desc
+| limit 50

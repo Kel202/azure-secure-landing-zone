@@ -1,0 +1,10 @@
+// Detect all blocked inbound traffic across NSGs
+// Useful for identifying reconnaissance or attack attempts
+AzureDiagnostics
+| where TimeGenerated > ago(24h)
+| where Category == "NetworkSecurityGroupEvent"
+| where type_s == "block"
+| where direction_s == "In"
+| summarize BlockedCount = count() by primaryIPv4Address_s, conditions_destinationPortRange_s, bin(TimeGenerated, 1h)
+| order by BlockedCount desc
+| project TimeGenerated, primaryIPv4Address_s, conditions_destinationPortRange_s, BlockedCount

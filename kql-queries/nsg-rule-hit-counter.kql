@@ -1,0 +1,8 @@
+// Show how many times each NSG rule has been matched
+// Useful for identifying most active security rules
+AzureDiagnostics
+| where TimeGenerated > ago(24h)
+| where Category == "NetworkSecurityGroupRuleCounter"
+| summarize TotalHits = sum(matchedConnections_d) by ruleName_s, direction_s, type_s
+| order by TotalHits desc
+| project ruleName_s, direction_s, type_s, TotalHits
