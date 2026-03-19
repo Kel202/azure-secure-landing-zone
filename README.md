@@ -105,6 +105,18 @@ NSG events are collected in Log Analytics and analyzed using KQL queries.
 
 ![NSG Logs](docs/screenshots/log-analytics.png)
 
+## Security Findings
+
+### Blocked Traffic Analysis
+KQL query against AzureDiagnostics revealed that both VMs received 
+574 blocked inbound connection attempts within a 24-hour period, 
+all caught by the DefaultRule_DenyAllInBound NSG rule across all 
+ports (0-65535). This confirms the least-privilege NSG model is 
+actively enforcing perimeter security with no unauthorised traffic 
+reaching application workloads.
+
+![NSG Logs](docs/screenshots/findings.png)
+
 ## Infrastructure Deployment
 
 Infrastructure was deployed using Terraform.
