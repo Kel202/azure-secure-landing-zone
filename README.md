@@ -2,7 +2,7 @@
 
 
 This project demonstrates a production-style Azure secure landing zone
-implemented using Terraform under Azure Student subscription constraints.
+implemented using Terraform.
 
 ## Objectives
 - Implement a hub-and-spoke network architecture
