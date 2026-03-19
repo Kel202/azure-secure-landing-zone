@@ -103,7 +103,7 @@ Network Security Groups enforce least-privilege traffic rules.
 
 NSG events are collected in Log Analytics and analyzed using KQL queries.
 
-![NSG Logs](docs/screenshots/nsg-logs.png)
+![NSG Logs](docs/screenshots/log-analytics.png)
 
 ## Infrastructure Deployment
 
